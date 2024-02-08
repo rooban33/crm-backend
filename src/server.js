@@ -2,6 +2,13 @@ require('module-alias/register');
 const mongoose = require('mongoose');
 const { globSync } = require('glob');
 const path = require('path');
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+
+// Enable CORS for all origins
+app.use(cors());
 
 // Make sure we are running node 7.6+
 const [major, minor] = process.versions.node.split('.').map(parseFloat);
